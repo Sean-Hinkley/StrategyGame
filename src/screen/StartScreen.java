@@ -1,4 +1,4 @@
-package Screens;
+package screen;
 
 public class StartScreen extends Screen {
 	
