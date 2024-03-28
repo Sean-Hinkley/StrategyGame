@@ -30,7 +30,11 @@ public class Button extends GameObject{
 		int mx = ke.getX();
 		
 		if(mx>=this.objX && mx<this.objX+this.w && my>=this.objY && my<=objY+this.h) {
-			System.out.println("Hello");
+			buttonAction();
 		}
+	}
+	
+	public void buttonAction() {
+		System.out.println("Hello");
 	}
 }
