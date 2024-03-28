@@ -1,32 +1,35 @@
-package Render;
+
 
 import java.awt.Color;
+import Screens.Screen;
+import Screens.StartScreen;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-
 public class MyGame extends Game  {
     public static final String TITLE = "Platformer";
     public static final int SCREEN_WIDTH = 1700;
     public static final int SCREEN_HEIGHT = 900;
     
-    
+    public Screen thisScreen;
+    public StartScreen start;
 
 
     public MyGame() 
     {
-
+    	start = new StartScreen();
+    	thisScreen = start;
     }
     
     public void update() 
     {
-    	
+    	thisScreen.update();
     }
     
     public void draw(Graphics pen) 
     {
-
+    	thisScreen.draw(pen);
     }
         
     @Override
@@ -42,7 +45,7 @@ public class MyGame extends Game  {
     public void keyReleased(KeyEvent ke) {}
 
     @Override
-    public void mouseClicked(MouseEvent ke) {}
+    public void mouseClicked(MouseEvent ke) {thisScreen.mouseClicked(ke);}
 
     @Override
     public void mousePressed(MouseEvent me) {}
