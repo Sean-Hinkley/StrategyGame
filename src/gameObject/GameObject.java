@@ -6,12 +6,14 @@ public abstract class GameObject {
 	public int objX;
 	public int objY;
 	private boolean solid;
+	private String Name;
 	
 	
-	public GameObject(int x, int y, boolean sol) {
+	public GameObject(int x, int y, boolean sol, String objName) {
 		objX = x;
 		objY = y;
 		solid = sol;
+		Name = objName;
 	}
 	
 	public void update() {
@@ -23,6 +25,10 @@ public abstract class GameObject {
 	public void draw(Graphics pen) {
 		
 	
+	}
+	
+	public String toString() {
+		return "Name: " + Name + ", ObjectX: " + objX + ", ObjectY: " + objY; 
 	}
 	
 	

@@ -1,6 +1,7 @@
-package Screens;
+package screens;
+
 import gameObject.GameObject;
-import buttonObject.Button;
+import gameObject.Button;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -12,7 +13,6 @@ public abstract class Screen {
     public Screen(String title) {
         this.title = title;
         objs = new GameObject[100];
-        objs[0] = new Button(50,50,100,500);
         
     }
 
@@ -47,7 +47,7 @@ public abstract class Screen {
     public void keyReleased(KeyEvent ke) {}
 
     
-    public void mouseClicked(MouseEvent ke) {objs[0].mouseClicked(ke);}
+    public void mouseClicked(MouseEvent ke) {}
 
     
     public void mousePressed(MouseEvent me) {}

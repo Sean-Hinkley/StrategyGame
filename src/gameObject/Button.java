@@ -1,15 +1,14 @@
-package buttonObject;
-import gameObject.GameObject;
+package gameObject;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 public class Button extends GameObject{
-	int w;
-	int h;
-	public Button(int x, int y, int w, int h) {
-		super(x,y,false);
+	public int w;
+	public int h;
+	public Button(int x, int y, int w, int h, String name) {
+		super(x,y,false, name);
 		this.h = h;
 		this.w = w;
 	}
@@ -21,7 +20,7 @@ public class Button extends GameObject{
 	
 	public void draw(Graphics pen) {
 		pen.setColor(new Color(255,0,255));
-		pen.fillRect(50,50, 100,100);
+		pen.fillRect(this.objX,this.objY, w,h);
 	}
 	
 	
@@ -29,12 +28,12 @@ public class Button extends GameObject{
 		int my = ke.getY();
 		int mx = ke.getX();
 		
-		if(mx>=this.objX && mx<this.objX+this.w && my>=this.objY && my<=objY+this.h) {
+		if(mx-8>=this.objX && mx-8<this.objX+this.w && my-32>=this.objY && my-32<=objY+this.h) {
 			buttonAction();
 		}
 	}
 	
 	public void buttonAction() {
-		System.out.println("Hello");
+		System.out.println("Clicked!");
 	}
 }
